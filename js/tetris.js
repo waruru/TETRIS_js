@@ -36,13 +36,13 @@ window.onload = () => {
     { color: 'orange',  angles: [[1-w, -1, 1],  [-w, w, w+1], [-1, 1, w-1], [-w-1, -w, w]] },
     { color: 'magenta', angles: [[-w, -1, 1],   [-w, 1, w],   [-1, 1, w],   [-w, -1, w]] }
   ]
-  let block = blocks[Math.floor(Math.random() * blocks.length)]
-  let angle = 0
+  let  block = blocks[Math.floor(Math.random() * blocks.length)]
+  let  angle = 0
   let angle0 = angle
   let parts0 = []
-  let score = 0
+  let  score = 0
   let score0 = score
-  let keys = {}
+  let   keys = {}
 
   document.onkeydown = (e) => {
     console.log(e.key)
