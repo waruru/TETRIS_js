@@ -142,7 +142,7 @@ window.onload = () => {
     parts0 = parts
     for(let i = -1; i < parts0.length; i++) {
       let offset = parts0[i] || 0
-      cells[top0 * width + left0 + offset].style.backgroundColor = block.color
+      cells[top * width + left + offset].style.backgroundColor = block.color
     }
     let info = tick + '(' + left + ',' + top + ') score: ' + score
     document.getElementById('info').innerHTML = info
