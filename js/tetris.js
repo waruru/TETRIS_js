@@ -4,7 +4,7 @@ window.onload = () => {
   const speed = 20
 
   let fills = {}
-  const html = ['<table>']
+  const html = ['<table id="tetris">']
 
   for(let y = 0; y < height; y++) {
     html.push('<tr>')
@@ -19,9 +19,17 @@ window.onload = () => {
     html.push('</tr>')
   }
   html.push('</table>')
+
+  html.push('<table id="next-block">')
+  for(let y = 0; y < 4; y++) {
+    html.push('<tr>')
+    for(let x = 0; x < 4; x++) {
+      html.push('<td></td>')
+    }
+  }
   document.getElementById('view').innerHTML = html.join('')
 
-  const cells = document.getElementsByTagName('td')
+  const cells = document.getElementById('tetris').getElementsByTagName('td')
   let top = 2
   let top0 = top
   let left = Math.floor(width / 2)
