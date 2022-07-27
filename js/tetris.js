@@ -47,10 +47,16 @@ window.onload = () => {
   document.onkeydown = (e) => {
     // console.log(e.key)
     switch(e.key) {
-      case  'ArrowLeft':   keys.left = true; break
-      case 'ArrowRight':  keys.right = true; break
-      case  'ArrowDown':   keys.down = true; break
-      case      ' ': keys.rotate = true; break
+      case  'ArrowLeft':     keys.left = true; break
+      case 'ArrowRight':    keys.right = true; break
+      case  'ArrowDown':     keys.down = true; break
+      case          ' ':
+        if(e.shiftKey) {
+          keys.rotate_l = true;
+        } else {
+          keys.rotate_r = true;
+        }
+        break
     }
   }
 
@@ -68,11 +74,13 @@ window.onload = () => {
       if(keys.left) left--
       if(keys.right) left++
       if(keys.down) top++
-      if(keys.rotate) angle++
+      if(keys.rotate_r) angle++
+      if(keys.rotate_l) angle--
     }
     keys = {}
 
-    let parts = block.angles[angle % block.angles.length]
+    angle = (angle % block.angles.length + block.angles.length) % block.angles.length
+    let parts = block.angles[angle]
     for(let i = -1; i < parts.length; i++) {
       let offset = parts[i] || 0
 
