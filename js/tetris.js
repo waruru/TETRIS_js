@@ -45,7 +45,7 @@ window.onload = () => {
   let   keys = {}
 
   document.onkeydown = (e) => {
-    console.log(e.key)
+    // console.log(e.key)
     switch(e.key) {
       case  'ArrowLeft':   keys.left = true; break
       case 'ArrowRight':  keys.right = true; break
@@ -101,9 +101,9 @@ window.onload = () => {
             }
 
             if(filled) {
-              for(let y2 = y; y >= 0; y2--) {
+              for(let y2 = y; y2 >= 0; y2--) {
                 for(let x = 1; x < width-1; x++) {
-                  fills[y2*width + x] = fills[(y2-1) * width + x]
+                  fills[y2*width + x] = fills[(y2-1)*width + x]
                 }
               }
               y++
